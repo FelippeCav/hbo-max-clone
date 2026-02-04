@@ -1,5 +1,8 @@
 # 🎬 HBO Max – Landing Page (UI Clone)
 
+![HBO Max UI Clone – Project Preview](./assets/images/preview.png)
+
+
 ## 📋 About the Project
 A responsive **HBO Max landing page UI clone**, built with **HTML5 and CSS3**, focused on **layout composition, animations, visual hierarchy and real-world streaming platform patterns**.
 
