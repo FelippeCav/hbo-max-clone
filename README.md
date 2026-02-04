@@ -27,19 +27,21 @@ It was developed as a **front-end practice project**, emphasizing **semantic HTM
 ---
 
 ## 📁 Project Structure
-hbo-max-clone/  
-│  
-├── index.html  
-├── login.html  
-├── assets/  
-│   ├── css/  
-│   │   ├── global.css  
-│   │   ├── index.css  
-│   │   └── login.css  
-│   ├── images/  
-│   └── js/  
-│       └── navbar.js  
-└── README.md  
+```text
+hbo-max-clone/
+│
+├── index.html
+├── login.html
+├── assets/
+│   ├── css/
+│   │   ├── global.css
+│   │   ├── index.css
+│   │   └── login.css
+│   ├── images/
+│   └── js/
+│       └── navbar.js
+└── README.md
+```
 
 ---
 
