@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <title>Entrar | HBO Max</title>
+</head>
+<body>
+        <!-- Navbar -->
+    <nav class="barra-menu">
+        <div class="logoMenu">
+            <img src="assets/images/hbo-logo.svg" alt="Logo HBO Max">
+        </div>
+        <nav class="nav-buttons">
+            <a href="#" class="btn btn-entrar"> ENTRAR </a>
+            <a href="index.html" class="btn btn-assinar"> ASSINE AGORA </a>
+        </nav>
+    </nav>
+
+    <!-- Main -->
+     <main>
+        <section class="container">
+            <form class="loginForm">
+                <h1 class="loginTitle">ENTRAR</h1>
+                <label class="loginLabel">Acesse sua conta na HBO Max</label>
+                <input
+                    class="loginField"
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Digite seu email"
+                    required
+                >
+                <span class="spanLogin emailNot" hidden>Email incorreto</span>
+                <input
+                    class="loginField"
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="Senha"
+                    minlength="8"
+                    required
+                >
+                <span class="spanLogin emailNot" hidden>Senha inválida. Mínimo 8 caracteres.</span>
+                <div class="btn-action">
+                    <button type="submit" class="btn-submit">ENTRAR</button>
+                    <a href="#" class="btn-lost">Esqueceu a senha?</a>
+                </div>
+            </form>
+        </section>
+     </main>
+    
+
+     <!-- Footer -->
+      <footer class="footer">
+        <div class="links">
+            <a class="footer-link" href="#">Agora na HBO Max</a>
+            <a class="footer-link" href="#">Em Breve</a>
+            <a class="footer-link" href="#">Filme em destaque</a>
+            <a class="footer-link" href="#">Séries</a>
+            <a class="footer-link" href="#">Ajuda</a>
+        </div>
+        <p class="footer-legal">
+            © 2022 WarnerMedia Direct Latin America, LLC. Todos os direitos reservados. HBO Max é usado sob licença.
+        </p>
+        <div class="footer-social">
+            <a href="" class="footer-social-link">
+                <img src="assets/images/fb_0.png" alt="ícone do facebook">
+            </a>
+            <a href="" class="footer-social-link">
+                <img src="assets/images/twitter_0.png" alt="ícone do twitter">
+            </a>
+            <a href="" class="footer-social-link">
+                <img src="assets/images/instagram_0.png" alt="ícone do instagram">
+            </a>
+            <a href="" class="footer-social-link">
+                <img src="assets/images/youtube_0.png" alt="ícone do youtube">
+            </a>
+        </div>
+      </footer>
+
+    <!-- scripts js-->
+      <script src="assets/js/navbar.js" ></script>
+</body>
+</html>

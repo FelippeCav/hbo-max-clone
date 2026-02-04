@@ -1,0 +1,799 @@
+/* Scroll Suave */
+html {
+  scroll-padding-top: 70px; /* Espaço para menu fixo */
+}
+
+body {
+    background-color: var(--primary-color);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Navbar */
+.barra-menu {
+    background-color: var(--nav-bg-color);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    transition: transform 0.35s ease;
+}
+
+/* barra escondida */
+.barra-menu.hide {
+    transform: translateY(-100%);
+}
+
+.logoMenu {
+    width: 160px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-buttons a {
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    color: var(--text-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.btn-entrar {
+    transition: all 0.8s ease;
+}
+
+.btn-entrar:hover {
+    color: var(--tertiary-color);
+}
+
+.btn-assinar {
+    background-color: var(--tertiary-color);
+    padding: 8px 26px 8px 26px;
+    border-radius: 50px;
+    transition: all 0.8s ease;
+}
+
+.btn-assinar:hover {
+    background-color: var(--btn-link-bg-color);
+    color: var(--btn-link-color);
+}
+
+/* HERO BANNER */
+
+.hero-banner {
+    color: var(--text-color);
+    padding-top: 150px;
+}
+
+/* HERO BG ANIMATION */
+.hero-banner {
+    height: 800px;
+    background: linear-gradient(-45deg, #56125b, #0f0f10, #271e6e);
+    background-size: 300% 300%;
+    z-index: 2;
+
+    position: relative;
+
+    animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Degradê de transição */
+.hero-banner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px; /* Altura do degradê */
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #020226 /* Cor da próxima seção */
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.hero-title {
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.title-light {
+    font-weight: 400;
+    text-align: center;
+}
+
+.title-bold {
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: center;
+}
+
+/* divisor */
+.divisor {
+    height: 4px;
+    max-width: 700px;
+    background-color: transparent;
+    background-image: var(--divider-bg-color);
+    margin: 40px auto;
+    border-radius: 50px;
+}
+
+/* price */
+.pricing {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    align-items: center;
+}
+
+.price-label {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 100;
+}
+
+.price-value {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.pricing-period {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* Btn assine ja */
+.btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.btn-assinar-banner {
+    background-color: transparent;
+    background-image: var(--btn-bg-color-gradient);
+    border-radius: 50px;
+    border: 3px solid transparent;
+    padding: 16px 40px;
+    background-clip: padding-box;
+
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    transition: all 1s ease;
+
+    animation: wiggle 2s linear infinite;
+}
+
+.btn-assinar-banner:hover {
+    background-color: transparent;
+    background-image: none;
+    border: 3px solid var(--secondary-color);
+}
+
+/* btn animation */
+@keyframes wiggle {
+    0% {
+        transform: rotate(0);
+    }
+    15% {
+        transform: rotate(-15deg);
+    }
+    20% {
+        transform: rotate(10deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    30% {
+        transform: rotate(10deg);
+    }
+    35% {
+        transform: rotate(-10deg);
+    }
+    40%, 100% {
+        transform: rotate(0);
+    }
+}
+
+/*  disclaimer*/
+.disclaimer {
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.9rem;
+}
+
+
+
+
+
+/* MAIN */
+
+/*  Palnos */
+
+.subscription {
+    background: url(/assets/images/background-movies-series.png);
+    background-size: cover;
+    position: relative;
+    margin-top: 150px;
+    margin-bottom: 100px;
+
+}
+
+.subscription-plans {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    perspective: 1200px;
+}
+
+.subscription h2 {
+    color: var(--text-color);
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    max-width: 1200px;
+    text-align: center;
+    margin: 80px auto;
+}
+
+.subscription-card {
+    color: var(--text-color);
+    width: 530px;
+    min-height: 550px;
+    border-radius: 10px;
+    padding: 40px 60px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--card-bg-color);
+
+    transition:
+        transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* cards hover */
+.subscription-plans:has(.subscription-card:first-child:hover) .subscription-card:last-child {
+    transform: rotateY(-15deg) scale(0.98);
+    transition-delay: 0.06s;
+}
+
+/* cards hover */
+.subscription-plans:has(.subscription-card:last-child:hover) .subscription-card:first-child {
+    transform: rotateY(15deg) scale(0.98);
+    transition-delay: 0.06s;
+}
+
+/* retorno mais lento (quando sai do hover) */
+.subscription-plans:not(:has(.subscription-card:hover)).subscription-card {
+    transition-duration: 0.7s;
+}
+    
+
+.subscription-card li {
+    list-style: none;
+    gap: 5px;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.subscription-card li::before {
+    content: "✓" ;
+    padding-right: 10px;
+}
+
+.subscripiton-goals {
+    color: var(--text-color);
+    text-align: left;
+    font-family: 'Raleway', sans-serif;
+    list-style: none;
+    font-size: 1.25rem;
+}
+
+.subscription-plan {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.subscription-plan h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.subscription-price {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.subscription-price span {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.button-plano {
+    background-color: transparent;
+    background-image: var(--btn-bg-color-gradient);
+    border-radius: 50px;
+    border: 3px solid transparent;
+    padding: 16px 40px;
+    background-clip: padding-box;
+
+    margin-top: auto;
+
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    transition: all 1s ease;
+}
+
+.button-plano:hover {
+    background-color: transparent;
+    background-image: none;
+    border: 3px solid var(--secondary-color);
+    scale: 1.05;
+    cursor: pointer;
+}
+
+/*  CONTENT CARD */
+
+
+.content-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.content-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: center;
+    column-gap: 30px;
+
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.content-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    width: 100%;
+    aspect-ratio: 7 / 11;
+
+    transition: all 1s ease;
+}
+
+.content-img {
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+    
+    transition: opacity 1s ease, border 0.5s ease;
+}
+
+.img-default {
+    opacity: 1;
+    z-index: 1;
+}
+
+.img-hover {
+    opacity: 0;
+    z-index: 2;
+}
+
+.content-card:hover .img-hover {
+    opacity: 1;
+}
+
+.content-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.content-card img:hover {
+    border: 2px solid var(--tertiary-color);
+}
+
+
+/* FOOTER */
+
+.footer {
+    padding: 60px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.links a {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--link-color);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+
+    margin: 0 20px;
+    transition: color 0.5s ease;
+}
+
+.links a:hover {
+    color: var(--text-color);
+}
+
+.footer-legal {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    font-size: 0.7rem;
+    color: var(--link-color);
+    margin: 10px 0;
+}
+
+.footer-social {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    align-items: center;
+}
+
+.footer-social-link img {
+  display: block;
+  filter: brightness(0.7);
+  transition: all 0.3s ease;
+}
+
+.footer-social-link:hover img {
+  filter: brightness(1.2);
+  transform: translateY(-3px);
+}
+
+
+/* TELAS MENORES QUE 1140px */
+
+@media (max-width: 1140px) {
+
+    .subscription-plans {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subscription-card {
+        width: 700px;
+        min-height: 550px;
+    }
+
+    .subscription .title {
+        max-width: 1000px;
+    }
+
+    /* cards hover */
+    .subscription-plans:has(.subscription-card:first-child:hover) .subscription-card:last-child {
+        transform: rotateX(-15deg) scale(0.98);
+        transition-delay: 0.06s;
+    }
+
+    /* cards hover */
+    .subscription-plans:has(.subscription-card:last-child:hover) .subscription-card:first-child {
+        transform: rotateX(-15deg) scale(0.98);
+        transition-delay: 0.06s;
+    }
+
+}
+
+
+
+/* FORMATO MOBILE touch 430PX LARGURA */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .barra-menu {
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 20px;
+        
+        z-index: 1000;
+    }
+
+    .hero-banner > * {
+        position: relative;
+        z-index: 2;
+    }
+
+    .logoMenu {
+        margin-bottom: 10px;
+    }
+
+
+    .divisor {
+        max-width: 300px;
+    }
+
+    .brand-logo {
+        max-width: 250px;
+        margin: 20px auto;
+    }
+
+    .hero-title {
+        max-width: 350px;
+        margin: 20px auto;
+    }
+
+    .subscription h2 {
+        font-size: 1.5rem;
+        padding: 0 20px;
+    }
+
+    .subscription-card {
+        width: 380px;
+        min-height: 550px;
+        padding: 40px 30px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .subscripiton-goals {
+        font-size: 1rem;
+    }
+
+    .content-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .content-container {
+        display: grid;
+
+        grid-template-columns: unset;
+        justify-content: unset;
+
+        grid-auto-flow: column;
+        grid-auto-columns: 85%;
+
+        gap: 16px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 30px 20px 0 20px;
+
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 20px;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .content-card {
+        scroll-snap-align: start;
+    }
+
+    .content-card:hover {
+        transform: none;
+    }
+
+
+    .footer {
+        padding: 100px 20px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .links {
+        text-align: center;
+    }
+
+    .links a {
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+    }
+    .footer-legal {
+        text-align: center;
+        max-width: 350px;
+        margin: 5px 0;
+    }
+
+}
+
+
+
+/* FORMATO max 430PX  */
+
+@media (max-width: 440px) {
+
+    .barra-menu {
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 20px;
+        
+        z-index: 1000;
+    }
+
+    .hero-banner > * {
+        position: relative;
+        z-index: 2;
+    }
+
+    .logoMenu {
+        margin-bottom: 10px;
+    }
+
+
+    .divisor {
+        max-width: 300px;
+    }
+
+    .brand-logo {
+        max-width: 250px;
+        margin: 20px auto;
+    }
+
+    .hero-title {
+        max-width: 350px;
+        margin: 20px auto;
+    }
+
+    .subscription h2 {
+        font-size: 1.5rem;
+        padding: 0 20px;
+    }
+
+    .subscription-card {
+        width: 380px;
+        min-height: 550px;
+        padding: 40px 30px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .subscripiton-goals {
+        font-size: 1rem;
+    }
+
+    .content-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .content-container {
+        display: grid;
+
+        grid-template-columns: unset;
+        justify-content: unset;
+
+        grid-auto-flow: column;
+        grid-auto-columns: 85%;
+
+        gap: 16px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 30px 20px 0 20px;
+
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 20px;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .content-card {
+        scroll-snap-align: start;
+    }
+
+    .content-card:hover {
+        transform: none;
+    }
+
+
+    .footer {
+        padding: 100px 20px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .links {
+        text-align: center;
+    }
+
+    .links a {
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+    }
+    .footer-legal {
+        text-align: center;
+        max-width: 350px;
+        margin: 5px 0;
+    }
+
+}
